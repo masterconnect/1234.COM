@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Verdana, sans-serif;
+      text-align: center;
+    }
+    .container {
+      margin-top: 60px;
+    }
+    .giant {
+      font-size: 2em;
+      font-weight: bold; 
+    }
+    .normal-text {
+      font-size: 1.1em;
+      margin: 0.6em 0;
+      font-weight: 400; 
+    }
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="giant">1234.com</div>
+    <div class="normal-text">For Future Use</div>
+    <div class="normal-text" id="email-container"></div>
+  </div>
+
+  <script>
+    const localPart = "support";
+    const domain = "1234";
+    const tld = "com";
+
+    const emailAddress = localPart + "@" + domain + "." + tld;
+    const mailtoLink = "mailto:" + emailAddress;
+
+    const link = document.createElement("a");
+    link.href = mailtoLink;
+    link.textContent = emailAddress;
+
+    document.getElementById("email-container").appendChild(link);
+  </script>
+</body>
+</html>
